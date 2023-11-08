@@ -5,7 +5,7 @@ export class NavBar extends Component {
     return (
       <div>
             <div>
-                <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="/">Daily News</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -17,9 +17,14 @@ export class NavBar extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link active" aria-current="page" href="/">Home</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/about">About</a>
-                                </li>
+                                <li className="nav-item"><a className="nav-link" href="/about">About</a></li>
+                                <li className="nav-item"><a className="nav-link" href="/about">business</a></li>
+                                <li className="nav-item"><a className="nav-link" href="/about">entertainment</a></li>
+                                <li className="nav-item"><a className="nav-link" href="/about">general</a></li>
+                                <li className="nav-item"><a className="nav-link" href="/about">health</a></li>
+                                <li className="nav-item"><a className="nav-link" href="/about">science</a></li>
+                                <li className="nav-item"><a className="nav-link" href="/about">sports</a></li>
+                                <li className="nav-item"><a className="nav-link" href="/about">technology</a></li>
                             </ul>
                         </div>
                     </div>
