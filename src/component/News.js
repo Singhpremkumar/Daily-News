@@ -7,7 +7,7 @@ export class News extends Component {
   static defaultProps = {
    country: 'in',
    pageSize : 8,
-   category: 'general',
+   category: 'science',
   }
    
   static propTypes = {
@@ -20,6 +20,7 @@ export class News extends Component {
     this.state = {
       articles: [],
       loading:false,
+      category: 'science',
       page:1
     }
   }
@@ -43,9 +44,9 @@ export class News extends Component {
    })
   }
 
+
   handleNextClick= async()=>{
     if(this.state.page + 1 > Math.ceil(this.state.totalResults/20)){
-
     }
     else{
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0334f7ab66e54a1c9beba99bf11d4ed4&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
@@ -61,6 +62,11 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-3">
+        {/* <select value={this.state.category} onChange={this.handleChange}>
+          <option value="health">Health</option>
+          <option value="general">General</option>
+          <option value="science">Science</option>
+        </select> */}
         <h1 className="text-center">Daily News Top-Headlines</h1>
         <div className="row">
           {this.state.articles.map((element) => {
@@ -72,7 +78,7 @@ export class News extends Component {
         </div> 
         <div className="container d-flex justify-content-between">
         <button disabled={this.state.page<=1} type="button" class="btn btn-dark" onClick={this.handlePrevClick}> &larr; Previous</button>
-        <button disabled={this.state.page + 1 > Math.ceil(this.state.ttalResults/20)} type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
+        <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/20)} type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
         </div>
       </div>
     )
