@@ -13,14 +13,10 @@ const [totalResults, setTotalResults] = useState(0)
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
-  // document.title = `${capitalizeFirstLetter(props.category)} - Daily News`;
-
  
 
   const updateNews = async()=> {
     props.setProgress(10);
-    // old api https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=0334f7ab66e54a1c9beba99bf11d4ed4&page=${page}&pageSize=${props.pageSize}
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=100c957d34f449d08d2de71a3a9e499b&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true);
     console.log("hi")
@@ -35,6 +31,7 @@ const [totalResults, setTotalResults] = useState(0)
   }
 
   useEffect(() => {
+    document.title = `${capitalizeFirstLetter(props.category)} - Daily News`;
     updateNews();
   }, [])
   
